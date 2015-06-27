@@ -1,0 +1,64 @@
+//* _____ SPECIFICS _____
+
+// import contextual entities
+@import buttons
+@import header
+@import footer
+@import main
+@import nav
+@import sample
+
+// miscellaneous rules
+.navLink
+  +basicClickable
+
+.externalLink
+  +basicClickable
+
+.firstOrderList_item
+  color: $color-secondary
+  list-style-type: square
+
+.firstOrderList_item_content
+  color: $color-default-darker
+
+.secondaryList_item
+  color: $color-secondary
+  list-style-type: square
+
+.secondaryList_item_content
+  color: $color-default-darker
+
+.articleSeparator
+  +hidden
+
+.note
+  border: solid 1px transparentize($color-main-lighter, 0.7)
+  background: transparentize($color-main-lighter, 0.8)
+  padding: 15px
+
+.exampleNote
+  margin-bottom: 15px
+  border: dotted 1px $color-secondary
+  padding: 15px
+
+.sampleTitle
+  display: inline-block
+  background: $color-alt
+  padding: 5px 20px
+
+.codeSample
+  +remIt("font-size", 14)
+  margin-top: 0
+  border: solid 1px $color-alt
+  background: $color-alt-light
+  padding: 20px
+  line-height: 1.3
+  color: $color-alt2
+
+// example component implementations
++example(".example")
+
++example(".example2", $defaultSkin: false)
+
++example-skin-alt(".example2")

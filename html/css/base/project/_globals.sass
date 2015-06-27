@@ -1,0 +1,54 @@
+$blue: #3bbfce
+$margin: 16px
+
+.content-navigation
+  border-color: $blue
+  color: darken($blue, 9%)
+
+.border
+  padding: $margin / 2
+  margin: $margin / 2
+  border-color: $blue
+
++importOnce("project-globals")
+  *,
+  \:before,
+  \:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+  html
+    width: 100%
+    height: 100%
+    font-size: 100%
+  body
+    +remIt(font-size, 16)
+    +radial-gradient($color-main-light, $color-main)
+    background: #fff
+    width: 100%
+    min-height: 100%
+    line-height: 1.4
+    color: #000
+    font-family: "Open Sans Light", Arial, "sans-serif"
+  ul
+    list-style: square
+  pre
+    background: #fff
+    padding: 10px
+  p
+    margin: 0 0 20px
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-family: 'Open Sans', Arial, 'sans-serif'
+  pre
+    // monospace defaults to Courrier New on windows, which seems to badly alter the = sign, so we'll avoid it
+    font-family: consolas, monospace
+  .mainContainer
+    +clearfix
+    margin: 0 auto
+    width: 100%
+    max-width: #{$containerWidth}px

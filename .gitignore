@@ -1,0 +1,8 @@
+.idea
+.tmp
+.sass-cache
+dist
+node_modules
+bower_components
+env.json
+npm-debug*

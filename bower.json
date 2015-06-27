@@ -1,0 +1,12 @@
+{
+  "name": "Hkit",
+  "private": true,
+  "dependencies": {
+    "modernizer": "~2.8.2"
+  },
+  "devDependencies": {
+    "skeleton-css": "~2.0.4",
+    "requirejs": "~2.1.18",
+    "jquery": "~2.1.4"
+  }
+}

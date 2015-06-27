@@ -1,0 +1,19 @@
+//* **** EXAMPLE COMPONENT SKIN ALT **** */
+
+// provide a default skin for the component
+// only visual changes that don't affect the component layout should be in here
+=example-skin-alt($selector: ".example", $hover: ":hover", $param2: "")
+  #{$selector}
+    background: #fff
+    color: green
+  #{$selector}_inner
+    background: #eee
+    color: orange
+  @if $hover == ":hover"
+    #{$selector}:hover
+      border: solid 1px purple
+      background: blue
+  @else
+    #{$selector}_#{$hover}
+      border: solid 1px purple
+      background: blue
