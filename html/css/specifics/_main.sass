@@ -1,52 +1,24 @@
-.mainHeader
-  +transform("translate(-50%, -50%)")
-  position: fixed
-  top: 50%
-  left: 50%
-  z-index: 10
-  text-align: center
-  color: $color-default-light
+.slogan
+  color: $color-alt
 
-.mainTitle
-  +remIt("font-size", 70)
-  +remIt("line-height", 75)
-  +text-shadow(1px 1px 3px rgba(0, 0, 0, 0.3))
-  margin: 0 0 10px
-  font-family: 'robotoSlab', georgia, serif
-  font-weight: normal
+.row
+  +remIt('padding-top', $baseFontSize * 3)
+  h3
+    color: $color-alt
 
-.mainSubtitle
-  +text-shadow(1px 1px 3px rgba(0, 0, 0, 0.3))
-  margin: 0
-  font-weight: normal
+.logo
+  +remIt('width', $baseFontSize * 10)
+  +remIt('height', $baseFontSize * 10)
+  margin: #{$baseFontSize * 3}px auto
 
-.mainContent
-  margin: 65px 0 50px
-
-// only hide mainSections by default if js is present to reveal them
-.js .mainSection
-  display: none
-
-.js .mainSection._is_current
-  display: block
-
-.mainSection_body
-  background: $color-default-light
-  padding: 10px 40px
-
-.mainSection_header
-  background: $color-main-lighter
-  padding: 10px 40px
-
-.mainSection_title
-  +remIt("font-size", 26)
-  +remIt("line-height", 30)
-  color: $color-main
-  font-weight: normal
-
-.mainSection_subtitle
-  margin-top: 30px
-  margin-bottom: 20px
-
-.mainSection_smallTitle
-  margin-top: 80px
+.features
+  .feature
+    text-align: center
+    #gulp-logo
+      width: 15%
+    #requirejs-logo
+      width: 53.2%
+    #sass-logo
+      width: 45%
+    p
+      padding-top: #{$baseFontSize * 1.5}px

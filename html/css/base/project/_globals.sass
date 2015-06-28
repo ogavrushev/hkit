@@ -10,6 +10,9 @@ $margin: 16px
   margin: $margin / 2
   border-color: $blue
 
+.center
+  text-align: center
+
 +importOnce("project-globals")
   *,
   \:before,
@@ -23,15 +26,14 @@ $margin: 16px
     font-size: 100%
   body
     +remIt(font-size, 16)
-    +radial-gradient($color-main-light, $color-main)
-    background: #fff
+    background: $color-main
     width: 100%
     min-height: 100%
     line-height: 1.4
     color: #000
     font-family: "Open Sans Light", Arial, "sans-serif"
   ul
-    list-style: square
+    list-style: none
   pre
     background: #fff
     padding: 10px
@@ -44,10 +46,16 @@ $margin: 16px
   h5,
   h6
     font-family: 'Open Sans', Arial, 'sans-serif'
+    color: $color-alt
+  a
+    font-family: 'Open Sans', Arial, 'sans-serif'
+    text-decoration: none
+    color: $color-secondart
+
   pre
     // monospace defaults to Courrier New on windows, which seems to badly alter the = sign, so we'll avoid it
     font-family: consolas, monospace
-  .mainContainer
+  .container
     +clearfix
     margin: 0 auto
     width: 100%
