@@ -6,35 +6,53 @@ var gulp = require('gulp'),
     env = require('config.json')('./env.json'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
-    sass = require('gulp-ruby-sass'),
-    fileInclude = require('gulp-file-include');
+    amdOptimize = require('amd-optimize'),
+    del = require('del'),
+    sass = require('gulp-ruby-sass');
 
 var config = {
     sass: {
-        src:  WEB_ROOT + '/css/app.scss',
+        src:  WEB_ROOT + '/css/app.sass',
         dest: BUILD_ROOT + '/css'
     },
+    scripts: {
+        src:  WEB_ROOT + '/js/**/*.js',
+        dest: BUILD_ROOT + '/js'
+    },
     images: {
-        src:  WEB_ROOT + '/images/**/*',
-        dest: BUILD_ROOT + '/images'
+        src:  WEB_ROOT + '/img/**/*',
+        dest: BUILD_ROOT + '/img'
     },
     fonts: {
-        src:  [
-            'html/bower_components/font-awesome/fonts/fontawesome-webfont.*',
-            'html/bower_components/open-sans-fontface/fonts/**'
-        ],
-        dest: BUILD_ROOT + '/font'
+        src: 'html/css/fonts/**',
+        dest: BUILD_ROOT + '/css/fonts'
     }
 };
 
 // load plugins
 var $ = require('gulp-load-plugins')();
 
+gulp.task('serve', function() {
+    browserSync.init({
+        server: {
+            baseDir: WEB_ROOT
+        }
+    });
+});
+
+gulp.task('serve:dist', function() {
+    browserSync.init({
+        server: {
+            baseDir: BUILD_ROOT
+        }
+    });
+});
+
 gulp.task('sass', function () {
     return sass(config.sass.src)
         .pipe($.plumber())
         .pipe($.autoprefixer('last 1 version'))
-        .pipe(gulp.dest('.tmp/css'))
+        .pipe(gulp.dest(config.sass.dest))
         .pipe($.size());
 });
 
@@ -56,12 +74,20 @@ gulp.task('fonts', function () {
         .pipe($.size());
 });
 
-/*gulp.task('scripts', function () {
-    return gulp.src(config.js.src)
-        .pipe($.jshint())
-        .pipe($.jshint.reporter(require('jshint-stylish')))
+gulp.task('js', function() {
+    return gulp.src(config.scripts.src)
+        .pipe(amdOptimize("init", {
+            baseUrl: 'html/js',
+            configFile: 'html/js/init.js',
+            paths: {
+                jquery: '../bower_components/jquery/dist/jquery.min'
+            }
+        }))
+        .pipe($.concat('init.js'))
+        .pipe($.uglify())
+        .pipe(gulp.dest(config.scripts.dest))
         .pipe($.size());
-});*/
+});
 
 gulp.task('html', ['sass', 'fonts'], function () {
     var jsFilter = $.filter('**/*.js'),
@@ -81,3 +107,11 @@ gulp.task('html', ['sass', 'fonts'], function () {
         .pipe(gulp.dest(BUILD_ROOT))
         .pipe($.size());
 });
+
+gulp.task('clean', function () {
+    del(['.sass-cache/**', 'dist'], function (err, paths) {
+        console.log('Deleted files/folders:\n', paths.join('\n'));
+    });
+});
+
+gulp.task('build', ['images', 'html', 'js']);

@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <title>HKIT - frontend framework</title>
 
+    <!-- build:css css/vendor.css -->
     <!-- skeleton -->
     <link rel="stylesheet" media="all" href="bower_components/skeleton-css/css/normalize.css">
     <link rel="stylesheet" media="all" href="bower_components/skeleton-css/css/skeleton.css">
     <!-- end skeleton -->
+    <!-- endbuild -->
 
     <!-- project styles -->
     <link rel="stylesheet" media="all" href="css/app.css">
     <!-- end project -->
+
 </head>
 <body>
 <main class="container">
     <section class="header">
         <div class="logo">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                  preserveAspectRatio="xMidYMid meet" viewBox="524 312 126 150">
                 <defs>
                     <style>@font-face {
@@ -67,27 +70,31 @@
         <div class="features">
             <div class="four columns feature">
                 <img src="img/sass.png" id="sass-logo">
+
                 <p>Using SASS modules for better css code structure</p>
             </div>
             <div class="four columns feature">
                 <img src="img/requirejs.png" id="requirejs-logo">
+
                 <p>Using RequireJS for modular javascript code</p>
             </div>
             <div class="four columns feature">
                 <img src="img/gulp.png" id="gulp-logo">
+
                 <p>Using Gulp build system to optimize project for production</p>
             </div>
         </div>
     </section>
     <section class="row">
         <h6 class="center">Documentation</h6>
+
         <p>
             This starting page was made for demonstration purposes.
             In order of proper use this framework, please refer to documentation below.
         </p>
         <ul>
             <li>
-               <a href="http://sass-lang.com">Sass - CSS with superpowers</a>
+                <a href="http://sass-lang.com">Sass - CSS with superpowers</a>
             </li>
             <li>
                 <a href="http://requirejs.org">Requirejs - Javascript modular loader</a>
@@ -105,8 +112,11 @@
     </section>
 </main>
 
+<!--build:js js/vendor/vendor.js -->
 <script src="bower_components/modernizer/modernizr.js"></script>
 <script src="bower_components/modernizer/feature-detects/css-remunit.js"></script>
-<script src="bower_components/requirejs/require.js" data-main="js/init"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<!-- endbuild -->
+<script src="js/init.js"></script>
 </body>
 </html>

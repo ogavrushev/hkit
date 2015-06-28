@@ -1,7 +1,7 @@
-
 // Require.js allows us to configure shortcut alias
 // Their usage will become more apparent futher along in the tutorial.
 require.config({
+    baseUrl: "js",
     paths: {
         jquery: '../bower_components/jquery/dist/jquery.min'
     }
