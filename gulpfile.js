@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     amdOptimize = require('amd-optimize'),
     del = require('del'),
-    sass = require('gulp-ruby-sass');
+    sass = require('gulp-ruby-sass'),
+    revReplace = require('gulp-rev-replace');
 
 var config = {
     sass: {
@@ -62,7 +63,7 @@ gulp.task('images', function () {
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
-        }))) //due to conflicts in freebsd
+        })))
         .pipe(gulp.dest(config.images.dest))
         .pipe($.size());
 });
@@ -102,8 +103,11 @@ gulp.task('html', ['sass', 'fonts'], function () {
         .pipe(cssFilter)
         .pipe($.csso())
         .pipe(cssFilter.restore())
+        .pipe($.rev())
         .pipe(assets.restore())
         .pipe($.useref())
+        .pipe(revReplace())
+        .pipe($.preprocess())
         .pipe(gulp.dest(BUILD_ROOT))
         .pipe($.size());
 });
