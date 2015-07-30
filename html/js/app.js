@@ -1,7 +1,7 @@
 define('app', ['jquery'], function ($) {
     return {
         initialize: function () {
-            console.log('init start');
+            console.log('app started');
             console.log($().jquery);
             setTimeout(function () {
                 console.log('initialized!');

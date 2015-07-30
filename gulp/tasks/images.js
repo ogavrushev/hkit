@@ -10,6 +10,5 @@ gulp.task('images', function () {
             interlaced: true
         })))
         .pipe(gulp.dest(config.images.tmp))
-        .pipe(gulp.dest(config.images.dest))
         .pipe($.size());
 });

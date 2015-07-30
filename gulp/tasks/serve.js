@@ -1,16 +1,14 @@
 var gulp = require('gulp'),
-    config = require('../config'),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload;
+    config = require('../config');
 
 gulp.task('serve', ['build'], function() {
-    browserSync.init({
-        server: [
-            config.dest.tmp
-        ]
+    global.browserSync.init({
+        server: {
+            baseDir: config.dest.tmp
+        }
     });
 
-    gulp.watch(config.sass.all, ['sass'], reload);
-    gulp.watch(config.scripts.src, ['requirejs'], reload);
-    gulp.watch(config.markup.src, ['html'], reload);
+    gulp.watch(config.sass.all, ['sass']).on("change", global.browserSync.reload);
+    gulp.watch(config.scripts.src, ['requirejs']).on("change", global.browserSync.reload);
+    gulp.watch(config.markup.src, ['html']).on("change", global.browserSync.reload);
 });

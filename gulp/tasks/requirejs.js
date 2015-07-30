@@ -12,8 +12,9 @@ gulp.task('requirejs', function() {
                 jquery: '../bower_components/jquery/dist/jquery.min'
             }
         }))
-        .pipe(gulp.dest(config.scripts.tmp))
+        .pipe($.concat('init.js'))
         .pipe($.uglify())
-        .pipe(gulp.dest(config.scripts.dest))
-        .pipe($.size());
+        .pipe(gulp.dest(config.scripts.tmp))
+        .pipe($.size())
+        .pipe(global.browserSync.stream());
 });

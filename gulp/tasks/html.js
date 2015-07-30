@@ -20,6 +20,6 @@ gulp.task('html', ['sass', 'fonts'], function () {
         .pipe($.useref())
         .pipe($.preprocess())
         .pipe(gulp.dest(config.dest.tmp))
-        .pipe(gulp.dest(config.dest.dest))
-        .pipe($.size());
+        .pipe($.size())
+        .pipe(global.browserSync.stream());
 });
