@@ -3,15 +3,14 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
-gulp.task('serve', ['build'],  function() {
+gulp.task('serve', ['build'], function() {
     browserSync.init({
         server: [
-            config.dest.src,
             config.dest.tmp
         ]
     });
 
-    gulp.watch(config.sass.tmp, ['sass'], reload);
-    gulp.watch(config.scripts.src, reload);
-    gulp.watch(config.dest.tmp + '/*.html', ['markup'], reload);
+    gulp.watch(config.sass.all, ['sass'], reload);
+    gulp.watch(config.scripts.src, ['requirejs'], reload);
+    gulp.watch(config.markup.src, ['html'], reload);
 });

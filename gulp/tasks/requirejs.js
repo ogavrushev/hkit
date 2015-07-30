@@ -9,12 +9,11 @@ gulp.task('requirejs', function() {
             baseUrl: 'html/js',
             configFile: 'html/js/init.js',
             paths: {
-                jquery: '../../bower_components/jquery/dist/jquery.min'
+                jquery: '../bower_components/jquery/dist/jquery.min'
             }
         }))
-        .pipe($.concat('init.js'))
-        .pipe($.uglify())
         .pipe(gulp.dest(config.scripts.tmp))
+        .pipe($.uglify())
         .pipe(gulp.dest(config.scripts.dest))
         .pipe($.size());
 });

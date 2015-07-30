@@ -13,6 +13,7 @@ module.exports = {
         tmp: TMP_ROOT
     },
     sass: {
+        all: WEB_ROOT + '/css/**/*.sass',
         src:  WEB_ROOT + '/css/app.sass',
         dest: BUILD_ROOT + '/css',
         tmp: TMP_ROOT + '/css'

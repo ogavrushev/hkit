@@ -3,7 +3,7 @@ var $ = require('gulp-load-plugins')();
 var config = require('../config');
 var revReplace = require('gulp-rev-replace');
 
-gulp.task('html', ['markup', 'sass', 'fonts'], function () {
+gulp.task('html', ['sass', 'fonts'], function () {
     var jsFilter = $.filter('**/*.js'),
         cssFilter = $.filter('**/*.css'),
         assets = $.useref.assets();
@@ -16,10 +16,9 @@ gulp.task('html', ['markup', 'sass', 'fonts'], function () {
         .pipe(cssFilter)
         .pipe($.csso())
         .pipe(cssFilter.restore())
-        .pipe($.rev())
         .pipe(assets.restore())
         .pipe($.useref())
-        .pipe(revReplace())
+        .pipe($.preprocess())
         .pipe(gulp.dest(config.dest.tmp))
         .pipe(gulp.dest(config.dest.dest))
         .pipe($.size());
