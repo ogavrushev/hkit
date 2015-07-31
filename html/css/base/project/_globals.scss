@@ -1,0 +1,17 @@
+body {
+  background-color: $color-main;
+  font-family: "Open Sans Light", Arial, "sans-serif";
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-alt
+    }
+    a {
+      font-family: 'Open Sans', Arial, 'sans-serif';
+      text-decoration:none;
+      color:$color-secondary;
+    }
+}

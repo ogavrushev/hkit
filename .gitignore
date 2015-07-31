@@ -1,7 +1,8 @@
 .idea
 .tmp
 .sass-cache
-dist
+.prod
+.test
 node_modules
 bower_components
 env.json

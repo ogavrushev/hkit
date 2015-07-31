@@ -3,7 +3,7 @@ var del = require('del');
 var config = require('../config');
 
 gulp.task('clean', function () {
-    del(['.sass-cache/**', config.dest.tmp], function (err, paths) {
+    del(['.sass-cache/**', config.paths.test], function (err, paths) {
         console.log('Deleted files/folders:\n', paths.join('\n'));
     });
 });

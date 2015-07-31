@@ -1,0 +1,30 @@
+@mixin importFont($fontname, $filename, $svgLabel, $isBold: false, $isItalic: false) {
+
+  @font-face {
+    font-family: $fontname;
+
+    // IE9 Compat Modes
+    src: url('fonts/#{$filename}.eot');
+    // IE6-IE8
+    src: url('fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+      // Modern Browsers
+    url('fonts/#{$filename}.woff') format('woff'),
+      // Safari, Android, iOS
+    url('fonts/#{$filename}.ttf') format('truetype'),
+      // Legacy iOS
+    url('fonts/#{$filename}.svg##{$svgLabel}') format('svg');
+
+    @if $isBold {
+      font-weight: bold;
+    } @else {
+      font-weight: normal;
+    }
+
+    @if $isItalic {
+      font-style: italic;
+    } @else {
+      font-style: normal;
+    }
+  }
+
+}

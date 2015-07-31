@@ -6,7 +6,7 @@ define('app', ['jquery', 'controller/base'], function ($, Base) {
             setTimeout(function () {
                 console.log('initialized!');
             }, 2000);
-            Base.setTitle("Oleg");
+            Base.setTitle("dfs");
             console.log(Base.getTitle());
         }
     }

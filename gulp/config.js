@@ -2,19 +2,20 @@
 
 var env = require('config.json')('../env.json');
 
-var BUILD_ROOT = 'dist',
+var BUILD_ROOT = '.prod',
     WEB_ROOT = 'html',
-    TMP_ROOT = '.tmp';
+    TMP_ROOT = '.test';
 
 module.exports = {
     markup: {
+        all: WEB_ROOT + '/**/*.html',
         src: WEB_ROOT + '/*.html',
         dest: BUILD_ROOT,
         tmp: TMP_ROOT
     },
     sass: {
-        all: WEB_ROOT + '/css/**/*.sass',
-        src:  WEB_ROOT + '/css/app.sass',
+        all: WEB_ROOT + '/css/**/*.scss',
+        src:  WEB_ROOT + '/css/app.scss',
         dest: BUILD_ROOT + '/css',
         tmp: TMP_ROOT + '/css'
     },
@@ -33,9 +34,8 @@ module.exports = {
         dest: BUILD_ROOT + '/css/fonts',
         tmp: TMP_ROOT + '/css/fonts'
     },
-    dest: {
-        src: WEB_ROOT,
-        dest: BUILD_ROOT,
-        tmp: TMP_ROOT
+    paths: {
+        test: TMP_ROOT + '/**/*',
+        prod: BUILD_ROOT
     }
 };

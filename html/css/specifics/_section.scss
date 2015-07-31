@@ -1,0 +1,42 @@
+section {
+  &.promo {
+    padding: rem($baseFontSize * 6) 0;
+    div {
+      &.promo-logo {
+        margin: 0 auto;
+        width: rem($baseFontSize * 12);
+        height: rem($baseFontSize * 12);
+      }
+    }
+
+    header {
+      &.promo-slogan {
+        padding-top: rem(32);
+        color: $color-alt;
+        text-align: center;
+      }
+    }
+  }
+
+  &.features {
+    @include outer-container(100%);
+    .features-items {
+      @include span-columns(12);
+      .features-items--item {
+        @include span-columns(4);
+        text-align: center;
+        img {
+          &#gulp-logo {
+            width: 15%;
+          }
+          &#requirejs-logo {
+            width: 53.2%;
+          }
+          &#sass-logo {
+            width: 45%;
+          }
+        }
+      }
+    }
+  }
+}

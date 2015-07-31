@@ -19,7 +19,7 @@ gulp.task('html', ['sass', 'fonts'], function () {
         .pipe(assets.restore())
         .pipe($.useref())
         .pipe($.preprocess())
-        .pipe(gulp.dest(config.dest.tmp))
+        .pipe(gulp.dest(config.markup.tmp))
         .pipe($.size())
         .pipe(global.browserSync.stream());
 });

@@ -1,0 +1,4 @@
+@include importOnce("project-fonts") {
+  @include importFont("Open Sans", "OpenSans-Regular", "OpenSans-Regular");
+  @include importFont("Open Sans Light", "OpenSans-Light", "OpenSans-Light");
+}
