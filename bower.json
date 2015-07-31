@@ -7,6 +7,7 @@
     "requirejs": "~2.1.18",
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
-    "bitters": "~1.0.0"
+    "bitters": "~1.0.0",
+    "normalize-scss": "~3.0.3"
   }
 }
