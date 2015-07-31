@@ -19,9 +19,8 @@ section {
   }
 
   &.features {
-    @include outer-container(100%);
+    @include span-columns(12);
     .features-items {
-      @include span-columns(12);
       .features-items--item {
         @include span-columns(4);
         text-align: center;
@@ -35,6 +34,22 @@ section {
           &#sass-logo {
             width: 45%;
           }
+        }
+      }
+    }
+  }
+
+  &.docs {
+    @include span-columns(12);
+    h3 {
+      text-align: center;
+    }
+    .docs-list {
+      list-style: none;
+      padding: 0;
+      a {
+        &:hover {
+          color: $color-main-light;
         }
       }
     }
