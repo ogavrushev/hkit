@@ -8,11 +8,6 @@ This is start up instruction.
 
 ### What then? ###
 
-* npm install
-* npm install bower -g
-* npm install gulp -g
-* bower install
-* gulp build
-* gulp serve:dist
+npm install
 
 ### Happy coding! ###
