@@ -3,6 +3,7 @@
 var env = require('config.json')('../env.json');
 
 var BUILD_ROOT = '.prod',
+    TEST_ROOT = 'test',
     WEB_ROOT = 'html',
     TMP_ROOT = '.test';
 
@@ -33,6 +34,11 @@ module.exports = {
         src: 'html/css/fonts/**',
         dest: BUILD_ROOT + '/css/fonts',
         tmp: TMP_ROOT + '/css/fonts'
+    },
+    tests: {
+        all: TEST_ROOT + '/**/*.js',
+        src: TEST_ROOT,
+        specs: TEST_ROOT + 'spec'
     },
     paths: {
         test: TMP_ROOT + '/**/*',

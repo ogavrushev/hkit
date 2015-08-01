@@ -3,7 +3,7 @@ var $ = require('gulp-load-plugins')();
 var config = require('../config');
 var amdOptimize = require('amd-optimize');
 
-gulp.task('requirejs', function() {
+gulp.task('requirejs', ['test'], function() {
     return gulp.src(config.scripts.src)
         .pipe(amdOptimize("init", {
             baseUrl: 'html/js',
