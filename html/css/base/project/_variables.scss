@@ -19,3 +19,6 @@ $color-main-dark: #2980B9;
 
 $color-alt: #2C3E50;
 $color-secondary: #E74C3C;
+
+$desktop: new-breakpoint(min-width 1200px);
+$mobile: new-breakpoint(max-width 400px max-width 720px 12);

@@ -21,11 +21,14 @@ section {
     }
   }
 
-  &.features {
+  &.features {    
     @include span-columns(12);
     .features-items {
       .features-items--item {
-        @include span-columns(4);
+        @include media($desktop) {
+          @include span-columns(4);
+        }        
+        @include media($mobile);
         text-align: center;
         img {
           &#gulp-logo {
