@@ -4,7 +4,6 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "modernizer": "~2.8.2",
-    "requirejs": "~2.1.18",
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
     "bitters": "~1.0.0",

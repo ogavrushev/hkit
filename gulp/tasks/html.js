@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var config = require('../config');
-var revReplace = require('gulp-rev-replace');
 
 gulp.task('html', ['sass', 'fonts'], function () {
     var jsFilter = $.filter('**/*.js'),

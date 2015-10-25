@@ -1,7 +1,7 @@
 .idea
 .tmp
 .sass-cache
-.prod
+html/*
 .test
 node_modules
 bower_components

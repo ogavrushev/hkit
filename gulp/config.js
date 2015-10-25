@@ -2,9 +2,9 @@
 
 var env = require('config.json')('../env.json');
 
-var BUILD_ROOT = '.prod',
+var BUILD_ROOT = 'html',
     TEST_ROOT = 'test',
-    WEB_ROOT = 'html',
+    WEB_ROOT = 'src',
     TMP_ROOT = '.test';
 
 module.exports = {
@@ -21,7 +21,8 @@ module.exports = {
         tmp: TMP_ROOT + '/css'
     },
     scripts: {
-        src:  WEB_ROOT + '/js/**/*.js',
+        all: WEB_ROOT + '/js/**/*.js',
+        src:  WEB_ROOT + '/js/app.js',
         dest: BUILD_ROOT + '/js',
         tmp: TMP_ROOT + '/js'
     },
@@ -31,7 +32,7 @@ module.exports = {
         tmp: TMP_ROOT + '/img'
     },
     fonts: {
-        src: 'html/css/fonts/**',
+        src: WEB_ROOT+ '/css/fonts/**',
         dest: BUILD_ROOT + '/css/fonts',
         tmp: TMP_ROOT + '/css/fonts'
     },
