@@ -3,6 +3,6 @@
 set -o errexit #Exit on error
 
 bower install
-sass ./html/css/app.scss ./html/css/app.css
+sass ./src/css/app.scss ./src/css/app.css
 gulp build
 gulp serve
