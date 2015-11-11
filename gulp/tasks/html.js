@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var config = require('../config');
 
-gulp.task('html', ['sass', 'fonts'], function () {
+gulp.task('html', ['fonts'], function () {
     var jsFilter = $.filter('**/*.js'),
         cssFilter = $.filter('**/*.css'),
         assets = $.useref.assets();
