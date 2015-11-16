@@ -7,10 +7,12 @@ var config = require('../config');
 gulp.task('scripts', function() {
     browserify({
         entries: config.scripts.src,
-        debug: !gulp.env.production
+        debug: config.env.debug
     })
-        .transform(babelify)
-        .bundle()
-        .pipe(source('app.js'))
-        .pipe(gulp.dest(config.scripts.tmp));
+    .transform(babelify.configure({
+        presets: ["es2015"]
+    }))
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(config.scripts.tmp));
 });

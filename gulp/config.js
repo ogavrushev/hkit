@@ -8,6 +8,7 @@ var BUILD_ROOT = 'html',
     TMP_ROOT = '.test';
 
 module.exports = {
+    env: env,
     markup: {
         all: WEB_ROOT + '/**/*.html',
         src: WEB_ROOT + '/*.html',

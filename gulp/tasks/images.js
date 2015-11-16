@@ -7,7 +7,8 @@ gulp.task('images', function () {
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
             progressive: true,
-            interlaced: true
+            interlaced: true,
+            svgoPlugins: [{removeViewBox: false}]
         })))
         .pipe(gulp.dest(config.images.tmp))
         .pipe($.size());
