@@ -15,11 +15,11 @@
     "gulp-cache": "^0.2.8",
     "gulp-concat": "^2.5.2",
     "gulp-csso": "^1.0.1",
-    "gulp-file-include": "^0.9.0",
+    "gulp-file-include": "^0.13.7",
     "gulp-filter": "^2.0.2",
     "gulp-flatten": "^0.0.4",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "2.*",
+    "gulp-imagemin": "^2.*",
     "gulp-jshint": "^1.9.4",
     "gulp-load-plugins": "^0.9.0",
     "gulp-notify": "^2.2.0",
@@ -41,7 +41,7 @@
     "wiredep": "^2.2.2"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=5.0"
   },
   "scripts": {
     "postinstall": "sh post-install.sh"

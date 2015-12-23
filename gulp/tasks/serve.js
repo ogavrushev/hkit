@@ -6,7 +6,7 @@ gulp.task('serve', function() {
         server: {
             baseDir: config.markup.tmp
         },
-        reloadDelay: 1000
+        reloadDelay: config.env.browserSyncDelay
     });
 
     gulp.watch(config.sass.all, ['sass']).on("change", global.browserSync.reload);

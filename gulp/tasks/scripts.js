@@ -9,10 +9,7 @@ gulp.task('scripts', function() {
         entries: config.scripts.src,
         debug: config.env.debug
     })
-    .transform(babelify.configure({
-        presets: ["es2015"]
-    }))
-    .bundle()
+    .transform("babelify").bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest(config.scripts.tmp));
 });

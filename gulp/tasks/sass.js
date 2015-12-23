@@ -6,7 +6,7 @@ var config = require('../config');
 gulp.task('sass', function () {
     return sass(config.sass.src)
         .pipe($.plumber())
-        .pipe($.autoprefixer('last 1 version'))
+        .pipe($.autoprefixer('last 2 version'))
         .pipe(gulp.dest(config.sass.tmp))
         .pipe($.size())
         .pipe(global.browserSync.stream());
