@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "6"
+before_install:
+  - gem install sass
 before_sript:
   - npm install gulp -g
 script: gulp
