@@ -44,6 +44,7 @@
     "node": ">=5.0"
   },
   "scripts": {
+    "test": "exit 0",
     "postinstall": "sh post-install.sh"
   }
 }
