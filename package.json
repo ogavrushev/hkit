@@ -45,6 +45,7 @@
   },
   "scripts": {
     "test": "exit 0",
-    "postinstall": "bower install && sass ./src/css/app.scss ./src/css/app.css && gulp build && gulp serve"
+    "start": "gulp serve",
+    "postinstall": "bower install && sass ./src/css/app.scss ./src/css/app.css && gulp build"
   }
 }
