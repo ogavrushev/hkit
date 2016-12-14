@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     config = require('../config');
 
 gulp.task('default', ['build'], function () {

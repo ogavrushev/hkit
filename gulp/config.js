@@ -1,8 +1,6 @@
-'use strict';
+const env = require('config.json')('../env.json');
 
-var env = require('config.json')('../env.json');
-
-var BUILD_ROOT = 'html',
+const BUILD_ROOT = 'html',
     TEST_ROOT = 'test',
     WEB_ROOT = 'src',
     TMP_ROOT = '.test';

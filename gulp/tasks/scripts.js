@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var config = require('../config');
+const gulp = require('gulp'),
+    browserify = require('browserify'),
+    babelify = require('babelify'),
+    source = require('vinyl-source-stream'),
+    config = require('../config');
 
 gulp.task('scripts', function() {
     browserify({

@@ -1,7 +1,7 @@
-var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
-var $ = require('gulp-load-plugins')();
-var config = require('../config');
+const gulp = require('gulp'),
+    sass = require('gulp-ruby-sass'),
+    $ = require('gulp-load-plugins')(),
+    config = require('../config');
 
 gulp.task('sass', function () {
     return sass(config.sass.src)
