@@ -37,8 +37,9 @@
   "scripts": {
     "test": "exit 0",
     "start": "npm i",
-    "build": "gulp build && gulp serve",
+    "start:dev": "gulp build && gulp serve",
+    "build": "gulp build",
     "build:prod": "NODE_ENV=production gulp build",
-    "postinstall": "./node_modules/.bin/bower install && npm run build"
+    "postinstall": "./node_modules/.bin/bower install"
   }
 }

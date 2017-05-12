@@ -5,4 +5,4 @@ before_install:
   - gem install sass
 before_sript:
   - npm install gulp -g
-script: gulp
+script: npm run build
