@@ -1,11 +1,17 @@
-const env = require('config.json')('../env.example.json');
-
 const BUILD_ROOT = 'dist',
     TEST_ROOT = 'test',
     WEB_ROOT = 'src';
 
-module.exports = {
-    env: env,
+const config = {
+    browserSync: {
+        host: "localhost",
+        browser: ["google chrome"],
+        reloadDelay: 800,
+        debug: true,
+        server: {
+            baseDir: BUILD_ROOT
+        },
+    },
     markup: {
         all: WEB_ROOT + '/**/*.html',
         src: WEB_ROOT + '/index.html',
@@ -39,3 +45,5 @@ module.exports = {
         prod: BUILD_ROOT
     }
 };
+
+module.exports = config;
