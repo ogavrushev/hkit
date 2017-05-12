@@ -1,39 +1,33 @@
-const env = require('config.json')('../env.json');
+const env = require('config.json')('../env.example.json');
 
-const BUILD_ROOT = 'html',
+const BUILD_ROOT = 'dist',
     TEST_ROOT = 'test',
-    WEB_ROOT = 'src',
-    TMP_ROOT = '.test';
+    WEB_ROOT = 'src';
 
 module.exports = {
     env: env,
     markup: {
         all: WEB_ROOT + '/**/*.html',
-        src: WEB_ROOT + '/*.html',
-        dest: BUILD_ROOT,
-        tmp: TMP_ROOT
+        src: WEB_ROOT + '/index.html',
+        dist: BUILD_ROOT
     },
     sass: {
         all: WEB_ROOT + '/css/**/*.scss',
         src:  WEB_ROOT + '/css/app.scss',
-        dest: BUILD_ROOT + '/css',
-        tmp: TMP_ROOT + '/css'
+        dist: BUILD_ROOT + '/css'
     },
     scripts: {
         all: WEB_ROOT + '/js/**/*.js',
         src:  WEB_ROOT + '/js/app.js',
-        dest: BUILD_ROOT + '/js',
-        tmp: TMP_ROOT + '/js'
+        dist: BUILD_ROOT + '/js'
     },
     images: {
         src:  WEB_ROOT + '/img/**/*',
-        dest: BUILD_ROOT + '/img',
-        tmp: TMP_ROOT + '/img'
+        dist: BUILD_ROOT + '/img'
     },
     fonts: {
         src: WEB_ROOT+ '/css/fonts/**',
-        dest: BUILD_ROOT + '/css/fonts',
-        tmp: TMP_ROOT + '/css/fonts'
+        dist: BUILD_ROOT + '/css/fonts'
     },
     tests: {
         all: TEST_ROOT + '/**/*.js',
@@ -41,7 +35,7 @@ module.exports = {
         specs: TEST_ROOT + 'spec'
     },
     paths: {
-        test: TMP_ROOT + '/**/*',
+        test: BUILD_ROOT + '/**/*',
         prod: BUILD_ROOT
     }
 };

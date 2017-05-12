@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>HKIT - frontend framework</title>
-    <!-- build:css css/app.css -->
     <link rel="stylesheet" media="all" href="css/app.css">
-    <!-- endbuild -->
 </head>
 <body>
 <main>
-    <!-- @include partials/header.html -->
+    @@include('./partials/header.html')
     <section class="features">
         <div class="features-items">
             <div class="features-items--item">
@@ -48,7 +46,7 @@
             </li>
         </ul>
     </section>
-    <!-- @include partials/footer.html -->
+    @@include('./partials/footer.html')
 </main>
 
 <!--build:js js/vendor/vendor.js -->

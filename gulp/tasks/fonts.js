@@ -5,6 +5,6 @@ const gulp = require('gulp'),
 gulp.task('fonts', function () {
     return gulp.src(config.fonts.src)
         .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
-        .pipe(gulp.dest(config.fonts.tmp))
+        .pipe(gulp.dest(config.fonts.dist))
         .pipe($.size());
 });

@@ -10,6 +10,6 @@ gulp.task('images', function () {
             interlaced: true,
             svgoPlugins: [{removeViewBox: false}]
         })))
-        .pipe(gulp.dest(config.images.tmp))
+        .pipe(gulp.dest(config.images.dist))
         .pipe($.size());
 });

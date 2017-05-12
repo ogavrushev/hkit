@@ -11,5 +11,5 @@ gulp.task('scripts', function() {
     })
     .transform("babelify").bundle()
     .pipe(source('app.js'))
-    .pipe(gulp.dest(config.scripts.tmp));
+    .pipe(gulp.dest(config.scripts.dist));
 });
