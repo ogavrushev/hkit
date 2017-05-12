@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 gulp.task('scripts', function() {
     browserify({
         entries: config.scripts.src,
-        debug: config.env.debug
+        debug: process.env.NODE_ENV === 'development'
     })
     .transform("babelify").bundle()
     .pipe(source('app.js'))

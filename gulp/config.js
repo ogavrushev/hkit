@@ -7,7 +7,6 @@ const config = {
         host: "localhost",
         browser: ["google chrome"],
         reloadDelay: 800,
-        debug: true,
         server: {
             baseDir: BUILD_ROOT
         },

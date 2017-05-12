@@ -38,6 +38,7 @@
     "test": "exit 0",
     "start": "npm i",
     "build": "gulp build && gulp serve",
+    "build:prod": "NODE_ENV=production gulp build",
     "postinstall": "./node_modules/.bin/bower install && npm run build"
   }
 }
